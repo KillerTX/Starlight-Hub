@@ -48,23 +48,49 @@ Rayfield:Notify({
    Image = nil,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Infinite Jump",
-   Callback = function()
-   game:GetService("UserInputService").JumpRequest:connect(function()
-   game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-   end)
+
+local Input = MainTab:CreateInput({
+   Name = "Walkspeed",
+   CurrentValue = "16",
+   PlaceholderText = "16",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input1",
+   Callback = function(Text)
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Text)
    end,
 })
 
-local Slider = MainTab:CreateSlider({
-   Name = "Walkspeed",
-   Range = {0, 300},
-   Increment = 1,
-   Suffix = "Speed",
-   CurrentValue = 16,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+local Input = MainTab:CreateInput({
+   Name = "JumpPower",
+   CurrentValue = "50",
+   PlaceholderText = "50",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input2",
+   Callback = function(Text)
+         game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Text)
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Infinite Jump",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+      game:GetService("UserInputService").JumpRequest:connect(function()
+      game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+   end,
+})
+
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Xray",
+   CurrentValue = false,
+   Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   for _, part in pairs(workspace:GetDescendants()) do
+      if part:IsA("BasePart") then
+         part.LocalTransparencyModifier = 0.8
+         end
+         end
    end,
 })
