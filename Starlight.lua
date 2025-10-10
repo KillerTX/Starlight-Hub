@@ -129,7 +129,7 @@ local Toggle = MainTab:CreateToggle({
 })
 
 local MainTab = Window:CreateTab("Visuals", nil)
-local MainSection = MainTab:CreateSection("ESP")
+local MainSection = MainTab:CreateSection("Walls")
 
 local MurdererLabel = Tab:CreateLabel("Murderer is: Unknown")
 local SheriffLabel = Tab:CreateLabel("Sheriff is: Unknown")
