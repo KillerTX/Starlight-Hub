@@ -129,10 +129,10 @@ local Toggle = MainTab:CreateToggle({
 })
 
 local MainTab = Window:CreateTab("Visuals", nil)
-local MainSection = MainTab:CreateSection("Walls")
+local MainSection = MainTab:CreateSection("ESP")
 
-local MurdererLabel = Tab:CreateLabel("Murderer is: Unknown")
-local SheriffLabel = Tab:CreateLabel("Sheriff is: Unknown")
+local MurdererLabel = VisualsTab:CreateLabel("Murderer is: Unknown")
+local SheriffLabel = VisualsTab:CreateLabel("Sheriff is: Unknown")
 
 -- Function to check and update the roles based on tools in players' backpacks
 local function updateRolesInfo()
