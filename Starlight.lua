@@ -233,7 +233,7 @@ game.Players.PlayerRemoving:Connect(function(player)
     end
 end)
 
-local ToggleAllESP = ESPTab:CreateToggle({
+local ToggleAllESP = VisualsTab:CreateToggle({
     Name = "Everyone",
     CurrentValue = false,
     Flag = "AllESP",
@@ -257,7 +257,7 @@ local ToggleAllESP = ESPTab:CreateToggle({
 
 
 
-local ToggleMurderESP = ESPTab:CreateToggle({
+local ToggleMurderESP = VisualsTab:CreateToggle({
     Name = "Murderer",
     CurrentValue = false,
     Flag = "MurderESP",
@@ -275,7 +275,7 @@ local ToggleMurderESP = ESPTab:CreateToggle({
     end,
 })
 
-local ToggleSheriffESP = ESPTab:CreateToggle({
+local ToggleSheriffESP = VisualsTab:CreateToggle({
     Name = "Sheriff",
     CurrentValue = false,
     Flag = "SheriffESP",
