@@ -87,7 +87,7 @@ local Toggle = MainTab:CreateToggle({
    CurrentValue = false,
    Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-   for _, part in ipairs(workspace:GetDescendants()) do
+      for _, part in ipairs(workspace:GetDescendants()) do
          if part:IsA("BasePart") then
                part.LocalTransparencyModifier = 0.7  -- makes everything semi-transparent
                end
